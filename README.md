@@ -39,7 +39,23 @@ vi etc/app.conf
 ./bin/send_message "my message"
 ```
 
-* 
+* Run the consumer:
+
+```
+./bin/consume.sh
+```
+
+* Start in the background:
+
+```
+nohup ./bin/consume.sh > /dev/null 2>&1 &
+```
+
+* Crontab entry to start at boot:
+
+```
+@reboot cd /path/to/where/you/cloned/this ; nohup ./bin/consume.sh > /dev/null 2>&1
+```
 
 # References
 
