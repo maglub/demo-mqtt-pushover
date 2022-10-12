@@ -1,6 +1,6 @@
 # Introduction
 
-This repo is show how to listen to an MQTT topic and send a notification when a certain value is posted. This example shows how to use Pushover and Slack, but is easily extended to use other push notifications. 
+This repo is show how to listen to an MQTT topic and send a notification when a certain value is posted. This example shows how to use Pushover and Slack, but is easily extended to use other push notifications. I created this demo after a discussion with a guy in an Arduino forum, where the topic was similar to "we don't have a home automatino system, but are receiving MQTT messages that we would like to route to a push notification".
 
 Different messaging services, that are equally easy to implement:
 
