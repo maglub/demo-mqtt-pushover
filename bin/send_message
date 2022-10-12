@@ -1,0 +1,16 @@
+#!/bin/bash
+
+this_dir=$(cd $(dirname $0); pwd)
+
+#--- read in the pushover_api_key from disk
+. $this_dir/../etc/app.conf
+
+echo "Sending message: $@"
+
+curl -s \
+  --form-string "token=$pushover_app_token" \
+  --form-string "user=$pushover_user_token" \
+  --form-string "message=$*" \
+  https://api.pushover.net/1/messages.json
+
+echo

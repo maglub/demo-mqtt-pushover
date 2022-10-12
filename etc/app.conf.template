@@ -1,0 +1,9 @@
+pushover_user_token=XXYYZZ
+pushover_app_token=XXYYZZ
+
+#--- ip or hostname to your mqtt broker
+mqtt_host=192.168.4.81
+mqtt_user=mqtt
+mqtt_password=supersecret
+mqtt_topic=my/topic/path/x
+
