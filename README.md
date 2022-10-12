@@ -68,7 +68,7 @@ nohup ./bin/consume.sh > /dev/null 2>&1 &
 * Log into your broker
 * Publish a raw value of "1" into the topic "my/topic/path/x"
 
-![mqtt-explorer-publish.png](/illustrations/mqtt-explorer-publish.png?raw=true "Publish topic")
+![mqtt-explorer-publish.jpg](/illustrations/mqtt-explorer-publish.jpg?raw=true "Publish topic")
 
 # References
 
