@@ -62,4 +62,4 @@ nohup ./bin/consume.sh > /dev/null 2>&1 &
 * https://pushover.net/
 * https://pushover.net/api
 * https://funprojects.blog/2021/05/25/bash-with-mqtt/
-
+* http://www.steves-internet-guide.com/mosquitto_pub-sub-clients/
