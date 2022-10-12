@@ -2,6 +2,10 @@
 
 This repo is show how to listen to an MQTT topic and send a notification when a certain value is posted. This example shows how to use Pushover and Slack, but is easily extended to use other push notifications. I created this demo after a discussion with a guy in an Arduino forum, where the topic was similar to "we don't have a home automatino system, but are receiving MQTT messages that we would like to route to a push notification".
 
+This is a very small, working prototype to show how to filter on MQTT topic/values to decide on when to send a notification message, and a couple of ways to send the actual message.
+
+I would normally not implement it this way, but in the absence of a home automation system you will need some sort of engine that consumes the MQTT messages and makes the decision on when to send a notification.
+
 Different messaging services, that are equally easy to implement:
 
 * Slack
@@ -38,7 +42,7 @@ vi etc/app.conf
 * Push to messaging service
 
 ```
-./bin/send_message "my message"
+./bin/send_message.SERVICE "my message"
 ```
 
 * Run the consumer:
@@ -47,7 +51,7 @@ vi etc/app.conf
 ./bin/consume.sh
 ```
 
-* Start in the background:
+* Start the consumer in the background:
 
 ```
 nohup ./bin/consume.sh > /dev/null 2>&1 &
@@ -59,6 +63,11 @@ nohup ./bin/consume.sh > /dev/null 2>&1 &
 @reboot cd /path/to/where/you/cloned/this ; nohup ./bin/consume.sh > /dev/null 2>&1
 ```
 
+# Test with MQTT Explorer
+
+* Log into your broker
+* Publish a raw value of "1" into the topic "my/topic/path/x"
+
 # References
 
 * https://mosquitto.org/
@@ -67,3 +76,4 @@ nohup ./bin/consume.sh > /dev/null 2>&1 &
 * https://pushover.net/api
 * https://funprojects.blog/2021/05/25/bash-with-mqtt/
 * http://www.steves-internet-guide.com/mosquitto_pub-sub-clients/
+* http://mqtt-explorer.com/
