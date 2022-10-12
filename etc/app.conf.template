@@ -1,3 +1,6 @@
+notification_type=pushover
+#notification_type=slack
+
 pushover_user_token=XXYYZZ
 pushover_app_token=XXYYZZ
 

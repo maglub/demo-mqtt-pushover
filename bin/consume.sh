@@ -10,6 +10,7 @@ mqtt_password=${mqtt_password:-supersecret}
 
 #--- topic to listen for
 mqtt_topic=${mqtt_topic:-my/topic/path/x}
+notification_type=${notification_type:-pushover}
 
 echo "Topic: $mqtt_topic"
 
@@ -21,7 +22,7 @@ do
   case $value in
     1)
        echo "  - Running external command: send_message"
-       $this_path/send_message "door bell"
+       $this_path/send_message.${notification_type} "door bell"
        ;;
     *)
        echo "Unknown value: $value"

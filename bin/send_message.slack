@@ -1,0 +1,20 @@
+#!/bin/bash
+
+this_dir=$(cd $(dirname $0); pwd)
+. $this_dir/../etc/app.conf
+
+SLACK_CHANNEL=${SLACK_CHANNEL:-#ops}
+SLACK_USERNAME=${SLACAK_USERNAME:-mqtt}
+SLACK_URLs=${SLACK_URLs:-https://hooks.slack.com/services/some/secret/token}
+
+SLACK_MESSAGE="$1"
+ 
+#ICON=":warning:"
+ICON=":white_check_mark:"
+ 
+#Send message to Slack
+for SLACK_URL in $SLACK_URLs
+do
+  curl -X POST --data "payload={\"channel\": \"${SLACK_CHANNEL}\", \"username\": \"${SLACK_USERNAME}\", \"text\": \"${ICON} ${SLACK_MESSAGE}\"}" "$SLACK_URL"
+done
+
